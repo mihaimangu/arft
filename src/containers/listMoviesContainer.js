@@ -69,17 +69,17 @@ export default class ListMovies extends Component{
 
         return (
          
-            <div>
-                <h3 className="">List Movies</h3>
-                <Search 
-                    setText={this.setText.bind(this)} 
-                    setYear={this.setYear.bind(this)}
-                    text={text} 
-                    year={year}
-                    onSearch={this.search.bind(this)}
-                />
-                {searchFinished && <List results={results} />}
-            </div>
+                    <div>
+                        <h3 className="">List Movies</h3>
+                        <Search 
+                            setText={this.setText.bind(this)} 
+                            setYear={this.setYear.bind(this)}
+                            text={text} 
+                            year={year}
+                            onSearch={this.search.bind(this)}
+                        />
+                        {searchFinished && <List results={results} />}
+                    </div>
 
              
 

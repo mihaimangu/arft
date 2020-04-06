@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import Rating from 'react-rating'
 
 import MyContext from '../context';
+import {Link, withRouter} from 'react-router-dom';
 
-export default class Movies extends Component{
+
+ class Movies extends Component{
     render(){
         const {results} = this.props
 
@@ -21,14 +23,13 @@ export default class Movies extends Component{
                                         {result.Poster && <img src={result.Poster} />}
                                     </div>
                                     <div>
-                                        {result.Title && <div>Title: {result.Title}</div>}
+                                        {result.Title && <Link to={`/single/${result.imdbID}`}><div>Title: {result.Title}</div></Link>}
                                         {result.Year && <div>Year: {result.Year}</div>}
                                         {result.Type && <div>Type: {result.Type}</div>}
                                         <Rating 
                                             initialRating={context.saved[result.imdbID] ? context.saved[result.imdbID].rating : 0}
 
                                             onChange={(value) => {
-                                                console.log('changing rating', value);
                                                 context.modifySaved(result, value)
                                             }}
                                         />
@@ -44,3 +45,5 @@ export default class Movies extends Component{
         )
     }
 }
+
+export default withRouter(Movies);

@@ -4,7 +4,7 @@ const apiKey = 'bab67a8e';
 export const OMDBApiUrl = `http://www.omdbapi.com/?apikey=${apiKey}`;
 
 export default {
-    getMovie: (movieId) =>  `${OMDBApiUrl}&i=${movieId}`,
+    getMovie: (movieId) =>  `${OMDBApiUrl}&i=${movieId}&plot=full`,
     search: (search) => `${OMDBApiUrl}&s=${search}`,
 };
 

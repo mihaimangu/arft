@@ -5,6 +5,7 @@ import MyProvider from './containers/myProvider';
 
 import ListMovies from './containers/listMoviesContainer';
 import MyMovies from './containers/myMoviesContainer';
+import SingleMovie from './containers/singleMovieContainer';
 import Header from './components/header';
 
 import {NotificationContainer} from 'react-notifications';
@@ -26,10 +27,9 @@ export default class App extends Component{
             <div className="App">
               <header className="App-header">
                   
-                   
-          
                   <Switch>
                     <Route path="/my-movies" component={MyMovies}/>
+                    <Route path="/single/:id" component={SingleMovie}/>
                     <Route path="/" component={ListMovies}/>
                   </Switch>
              
