@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React, {Component, createContext} from 'react';
 import Search from '../components/search';
 import List from '../components/listMovies';
 
 import axios from 'axios';
 import urlPaths from '../constants/async';
 
-import {NotificationContainer, NotificationManager} from 'react-notifications';
-
+import {NotificationManager} from 'react-notifications';
+import MyContext from '../context';
 
 export default class ListMovies extends Component{
     constructor(props){
@@ -68,17 +68,20 @@ export default class ListMovies extends Component{
         const {text, year, results, searchFinished} = this.state;
 
         return (
-            <div>
-                <h3 className="">List Movies</h3>
-                <Search 
-                    setText={this.setText.bind(this)} 
-                    setYear={this.setYear.bind(this)}
-                    text={text} 
-                    year={year}
-                    onSearch={this.search.bind(this)}
-                />
-                {searchFinished && <List results={results} />}
-            </div>
+         
+                    <div>
+                        <h3 className="">List Movies</h3>
+                        <Search 
+                            setText={this.setText.bind(this)} 
+                            setYear={this.setYear.bind(this)}
+                            text={text} 
+                            year={year}
+                            onSearch={this.search.bind(this)}
+                        />
+                        {searchFinished && <List results={results} />}
+                    </div>
+
+             
 
         )
     }
