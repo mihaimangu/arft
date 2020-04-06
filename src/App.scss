@@ -28,6 +28,22 @@
   color: #61dafb;
 }
 
+
+.single-movie-wrapper{
+  display: flex;
+  margin-bottom: 1px;
+  border: 1px solid white;
+  text-align:left;
+  align-items: center;
+}
+
+.single-movie-img-wrapper{
+  max-width: 150px;
+  img{
+    max-width: 100%;
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
