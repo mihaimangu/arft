@@ -39,7 +39,6 @@ export default class ListMovies extends Component{
             url: urlPaths.search(text),
             params
         }).then(response => {
-            console.log(response.data);
 
             if(response.data.Response && response.data.Response === "True"){
                 this.setState({

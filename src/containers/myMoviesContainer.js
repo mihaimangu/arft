@@ -31,7 +31,6 @@ class MyMovies extends Component{
 
         let results = this.state.results;
 
-        debugger;
         if(sortBy === 'name'){
             const ordered = _.orderBy(results, 'Title', 'asc');
             this.setState({
@@ -42,16 +41,12 @@ class MyMovies extends Component{
             this.setState({
                 results: ordered
             })
-        }
-
-
-       
+        }  
     }
 
     render(){
         return (
             <React.Fragment>
-
                 <label>Filter by:</label>
                 <select defaultValue={0} onChange={this.sortBy.bind(this)}>
                     <option value="0" disabled>Select</option>

@@ -17,7 +17,6 @@ export default class MyProvider extends Component{
     }
   
     modifySaved = (newElement, rating) => {
-      console.log('modifying the saved ones');
       //modify the new state
   
       const ls = localStorage.getItem('savedMovies3');

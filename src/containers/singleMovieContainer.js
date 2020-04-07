@@ -24,7 +24,6 @@ export default class SingleMovie extends Component{
             axios({
                 url: urlPaths.getMovie(params.id)
             }).then(response => {
-                console.log('response data', response.data);
                 this.setState({
                     movieData: response.data,
                     loading: false,
